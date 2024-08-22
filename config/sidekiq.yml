@@ -1,0 +1,11 @@
+:concurrency: 5
+:queues:
+  - default
+
+:scheduler:
+  :dynamic: true
+  :schedule:
+    DeleteOldPostsJob:
+      cron: "0 * * * *"  # Runs every hour on the hour
+      class: "DeleteOldPostsJob"
+      queue: default
